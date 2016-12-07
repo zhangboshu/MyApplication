@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <com.example.zhangboshu.myapplication.widget.TopBar
         android:id="@+id/topBar"
-        app:leftTextColor="@color/color_333333"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         app:leftText="后退"
-        app:title="我是标题"
-        app:titleTextColor="@color/colorAccent"
-        app:titleTextSize="16sp"
+        app:leftTextColor="@color/color_333333"
         app:rightText="更多"
         app:rightTextColor="@color/color_333333"
+        app:title="我是标题"
+        app:titleTextColor="@color/colorAccent"
+        app:titleTextSize="16sp"/>
+
+    <com.example.zhangboshu.myapplication.widget.ArcDisplay
+        android:id="@+id/my_arc"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="360dp"
+        app:arcAngle="10"
+        app:arcColor="#00ff00"
+        app:arcWidth="30"
+        app:centerCircleColor="#00ff00"
+        app:centerFontSize="70"
+        app:centerTextColor="#f33"/>
+
+    <EditText
+        android:inputType="numberDecimal"
+        android:id="@+id/my_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/button1"
+        android:text="确定"
+        android:id="@+id/my_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="登录"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

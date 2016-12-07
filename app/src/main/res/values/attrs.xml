@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="TopBar">
         <attr name="title" format="string"/>
         <attr name="titleTextSize" format="dimension"/>
@@ -10,5 +11,14 @@
         <attr name="rightText" format="string"/>
         <attr name="rightBackground" format="reference|color"/>
         <attr name="rightTextColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ArcDisplay">
+        <attr name="centerFontSize" format="integer"/>
+        <attr name="centerTextColor" format="color"/>
+        <attr name="centerCircleColor" format="color"/>
+        <attr name="arcColor" format="color"/>
+        <attr name="arcAngle" format="float"/>
+        <attr name="arcWidth" format="integer"/>
     </declare-styleable>
 </resources>
