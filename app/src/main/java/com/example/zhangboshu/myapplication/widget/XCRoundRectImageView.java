@@ -23,6 +23,7 @@ import com.example.zhangboshu.myapplication.utils.DisplayUtil;
 public class XCRoundRectImageView extends ImageView {
 
     private Paint paint;
+    private String myColor = "#f2f2f2";
 
     public XCRoundRectImageView(Context context) {
         this(context,null);
@@ -87,10 +88,15 @@ public class XCRoundRectImageView extends ImageView {
         canvas.drawBitmap(bitmap, rect, rect, paint);
 
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.parseColor("#ff0000"));
+        paint.setColor(Color.parseColor(myColor));
         paint.setStrokeWidth(DisplayUtil.dip2px(getContext(), 2));
         canvas.drawRoundRect(rectF, roundPx,roundPx, paint);
 
         return output;
+    }
+
+    public void setPaintColor(String color){
+        this.myColor = color;
+        invalidate(); //重新绘制
     }
 }

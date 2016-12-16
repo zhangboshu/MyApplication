@@ -2,6 +2,8 @@ package com.example.zhangboshu.myapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.zhangboshu.myapplication.adapter.MyGridViewAdapter;
@@ -44,5 +46,12 @@ public class GridViewTextActivity extends AppCompatActivity {
         imgList = getData();
         adapter = new MyGridViewAdapter(this, imgList);
         myGridView.setAdapter(adapter);
+
+        myGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                adapter.setMySelect(position);
+            }
+        });
     }
 }

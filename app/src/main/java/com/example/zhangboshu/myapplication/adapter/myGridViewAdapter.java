@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.zhangboshu.myapplication.R;
+import com.example.zhangboshu.myapplication.widget.XCRoundRectImageView;
 
 import java.util.List;
 
@@ -19,10 +20,16 @@ public class MyGridViewAdapter extends BaseAdapter {
 
     private Context context;
     private List<String> imgList;
+    private int mySelect = -1;
 
     public MyGridViewAdapter(Context context, List<String> imgList) {
         this.context = context;
         this.imgList = imgList;
+    }
+
+    public void setMySelect(int myPosition){
+        this.mySelect = myPosition;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -44,6 +51,13 @@ public class MyGridViewAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = View.inflate(context, R.layout.item_gridview_img, null);
+
+        }
+        final XCRoundRectImageView img = (XCRoundRectImageView) convertView.findViewById(R.id.item_img);
+        if (mySelect == position){
+            img.setPaintColor("#a242ea");
+        }else{
+            img.setPaintColor("#f2f2f2");
         }
         Glide.with(context).load(imgList.get(position)).asBitmap().into((ImageView) convertView);
         return convertView;
