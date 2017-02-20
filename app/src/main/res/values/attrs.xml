@@ -21,4 +21,11 @@
         <attr name="arcAngle" format="float"/>
         <attr name="arcWidth" format="integer"/>
     </declare-styleable>
+    
+    <declare-styleable name="RatioImageView">
+        <attr name="ratioWidth" format="integer"/>
+        <attr name="ratioHeight" format="integer"/>
+        <attr name="roundedSize" format="dimension"/>
+    </declare-styleable>
+    
 </resources>

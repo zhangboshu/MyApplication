@@ -2,7 +2,6 @@ package com.example.zhangboshu.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +10,9 @@ import android.widget.Toast;
 import com.example.zhangboshu.myapplication.widget.ArcDisplay;
 import com.example.zhangboshu.myapplication.widget.TopBar;
 
-public class MainActivity extends AppCompatActivity {
+import static com.example.zhangboshu.myapplication.utils.ConnectionChangeReceiver.getNetState;
+
+public class MainActivity extends BaseActivity {
 
     private TopBar topBar;
     private ArcDisplay myArc;
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         topBar.setTopBarListener(new TopBar.TopBarListener() {
             @Override
             public void leftClick() {
-                Toast.makeText(MainActivity.this, "左边", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                startActivity(intent);
             }
 
             @Override
@@ -47,5 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 myArc.setProgress(Float.valueOf(myEdt.getText().toString().trim()));
             }
         });
+
+        if (getNetState().equals("wifi")) {
+            Toast.makeText(this, "wifi", Toast.LENGTH_SHORT).show();
+        }else if (getNetState().equals("mobile")){
+            Toast.makeText(this, "mobile", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "notNet", Toast.LENGTH_SHORT).show();
+        }
     }
 }

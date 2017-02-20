@@ -99,4 +99,5 @@ public class XCRoundRectImageView extends ImageView {
         this.myColor = color;
         invalidate(); //重新绘制
     }
+
 }

@@ -1,7 +1,6 @@
 package com.example.zhangboshu.myapplication;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -11,7 +10,7 @@ import com.example.zhangboshu.myapplication.adapter.MyGridViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GridViewTextActivity extends AppCompatActivity {
+public class GridViewTextActivity extends BaseActivity {
 
     private GridView myGridView;
     private List<String> imgList;
@@ -53,5 +52,6 @@ public class GridViewTextActivity extends AppCompatActivity {
                 adapter.setMySelect(position);
             }
         });
+
     }
 }

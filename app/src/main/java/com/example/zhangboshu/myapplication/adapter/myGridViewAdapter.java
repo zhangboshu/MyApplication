@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.zhangboshu.myapplication.R;
-import com.example.zhangboshu.myapplication.widget.XCRoundRectImageView;
+import com.example.zhangboshu.myapplication.widget.RatioImageView;
 
 import java.util.List;
 
@@ -53,12 +53,7 @@ public class MyGridViewAdapter extends BaseAdapter {
             convertView = View.inflate(context, R.layout.item_gridview_img, null);
 
         }
-        final XCRoundRectImageView img = (XCRoundRectImageView) convertView.findViewById(R.id.item_img);
-        if (mySelect == position){
-            img.setPaintColor("#a242ea");
-        }else{
-            img.setPaintColor("#f2f2f2");
-        }
+        final RatioImageView img = (RatioImageView) convertView.findViewById(R.id.item_img);
         Glide.with(context).load(imgList.get(position)).asBitmap().into((ImageView) convertView);
         return convertView;
     }
