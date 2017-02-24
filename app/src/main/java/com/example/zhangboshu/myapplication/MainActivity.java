@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.zhangboshu.myapplication.widget.ArcDisplay;
 import com.example.zhangboshu.myapplication.widget.TopBar;
-
-import static com.example.zhangboshu.myapplication.utils.ConnectionChangeReceiver.getNetState;
 
 public class MainActivity extends BaseActivity {
 
@@ -34,7 +31,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void rightClick() {
-                Intent intent = new Intent(MainActivity.this, GridViewTextActivity.class);
+                Intent intent = new Intent(MainActivity.this, SvgTextActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,13 +46,5 @@ public class MainActivity extends BaseActivity {
                 myArc.setProgress(Float.valueOf(myEdt.getText().toString().trim()));
             }
         });
-
-        if (getNetState().equals("wifi")) {
-            Toast.makeText(this, "wifi", Toast.LENGTH_SHORT).show();
-        }else if (getNetState().equals("mobile")){
-            Toast.makeText(this, "mobile", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this, "notNet", Toast.LENGTH_SHORT).show();
-        }
     }
 }
